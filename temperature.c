@@ -1,19 +1,19 @@
 #include <stdio.h>
 
+#define LOWER 0
+#define UPPER 300
+#define STEP 20
+
 /* print Fahrenheit-Celsius table
  for fahr = 0, 20, ..., 300 */
-main()
+int main(void)
 {
-    int fahr, celsius;
-    int lower, upper, step;
-    lower = 0;   /* lower limit of temperature scale */
-    upper = 300; /* upper limit */
-    step = 20;   /* step size */
-    fahr = lower;
-    while (fahr <= upper)
+    float fahr, celsius;
+    printf("Fahrenheit Celsius Table\n");
+    for (fahr = LOWER; fahr <= UPPER; fahr = fahr + STEP)
     {
-        celsius = 5 * (fahr - 32) / 9;
-        printf("%d\t%d\n", fahr, celsius);
-        fahr = fahr + step;
+        celsius = (fahr - 32) * (5.0 / 9.0);
+        printf("%10.0f %7.1f\n", fahr, celsius);
+        fahr = fahr;
     }
 }
